@@ -1,0 +1,4 @@
+include hello_app/schema.sql
+graft hello_app/static
+graft hello_app/templates
+global-exclude *.pyc
