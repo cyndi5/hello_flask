@@ -17,6 +17,10 @@ def about():
 def contact():
     return render_template("contact.html")
 
+@app.route("/howto/")
+def howto():
+    return render_template("howto.html")
+
 @app.route("/hello/")
 @app.route("/hello/<name>")
 def hello_there(name = None):
