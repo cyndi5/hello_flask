@@ -21,14 +21,10 @@ ENV UWSGI_INI uwsgi.ini
 ENV STATIC_URL /hello_app/static
 
 # Set the folder where uwsgi looks for the app
-WORKDIR /
+WORKDIR /hello_app
 
 # Copy the app contents to the image
-COPY . /
-
-# Make app folder writable for the sake of db.sqlite3, and make that file also writable.
-RUN chmod g+w /instance
-RUN chmod g+w /instance/hello_flask.sqlite
+COPY . /hello_app
 
 # If you have additional requirements beyond Flask (which is included in the
 # base image), generate a requirements.txt file with pip freeze and uncomment
